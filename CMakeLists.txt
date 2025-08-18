@@ -10,6 +10,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(LearningOpenGL
     src/glad.c
     main.cpp
+    src/glfwService.h
 )
 
 find_package(OpenGL REQUIRED)
@@ -17,6 +18,9 @@ find_package(OpenGL REQUIRED)
 # Make sure this path points to where your glad.h and iKHR directory are located
 target_include_directories(LearningOpenGL PRIVATE
     /home/v01d/dev/libs/include
+    ${CMAKE_SOURCE_DIR}/src
+
+
 )
 
 target_link_libraries(LearningOpenGL PRIVATE

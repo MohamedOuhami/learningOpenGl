@@ -37,19 +37,19 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 34,
+				"line" : 38,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 22,
+				"line" : 26,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 15,
+				"line" : 16,
 				"parent" : 0
 			},
 			{
@@ -71,7 +71,7 @@
 			{
 				"command" : 6,
 				"file" : 0,
-				"line" : 18,
+				"line" : 19,
 				"parent" : 0
 			}
 		]
@@ -90,6 +90,10 @@
 				{
 					"backtrace" : 8,
 					"path" : "/home/v01d/dev/libs/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/src"
 				}
 			],
 			"language" : "C",
@@ -110,6 +114,10 @@
 				{
 					"backtrace" : 8,
 					"path" : "/home/v01d/dev/libs/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/src"
 				}
 			],
 			"language" : "CXX",
@@ -214,6 +222,13 @@
 				0,
 				1
 			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				2
+			]
 		}
 	],
 	"sources" : 
@@ -229,6 +244,11 @@
 			"compileGroupIndex" : 1,
 			"path" : "main.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/glfwService.h",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

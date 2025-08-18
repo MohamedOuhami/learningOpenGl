@@ -1,11 +1,8 @@
 #include <iostream>
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-
+#include <glfwService.h>
 
 using namespace std;
 
-void framebuffer_size_callback(GLFWwindow* window,int height, int width);
 
 int main()
 {
@@ -66,8 +63,21 @@ int main()
     // If the window is not set to close
     while(!glfwWindowShouldClose(window)){
 
+        processInput(window);
+
+        // Normally, the rendering logic would go here
+        // To test how things work, we can clear the screen from the color buffer in the previous frame
+        // We can set the color with which to fill the screen after clearing the color buffer
+        // glClearColor is a "state-changing" function
+        glClearColor(.2f,.3f,.3f,1.0f);
+
+        // Then we set that we want to clear the color buffer
+        // glClear is a "state-using" function
+        glClear(GL_COLOR_BUFFER_BIT);
+
         // This func will swap the color buffer and show the colors in the screen
         glfwSwapBuffers(window);
+
 
         // Process the unhandled events
         glfwPollEvents();
@@ -84,3 +94,11 @@ void framebuffer_size_callback(GLFWwindow* window,int height, int width){
 
 }
 
+void processInput(GLFWwindow* window){
+
+    // Check if the specified key was pressed
+    if(glfwGetKey(window,GLFW_KEY_Q) == GLFW_PRESS){
+        // Close the window
+        glfwSetWindowShouldClose(window,true);
+    }
+}

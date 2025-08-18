@@ -145,6 +145,7 @@ CMakeFiles/LearningOpenGL.dir/main.cpp.o: \
  /usr/include/c++/15.1.1/bits/basic_ios.tcc \
  /usr/include/c++/15.1.1/bits/ostream.tcc /usr/include/c++/15.1.1/istream \
  /usr/include/c++/15.1.1/bits/istream.tcc \
+ /home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/src/glfwService.h \
  /home/v01d/dev/libs/include/glad/glad.h \
  /home/v01d/dev/libs/include/KHR/khrplatform.h \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h \

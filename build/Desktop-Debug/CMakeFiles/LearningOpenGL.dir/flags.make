@@ -5,13 +5,13 @@
 # compile CXX with /usr/bin/g++
 C_DEFINES = 
 
-C_INCLUDES = -I/home/v01d/dev/libs/include
+C_INCLUDES = -I/home/v01d/dev/libs/include -I/home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/src
 
 C_FLAGS = -g -fdiagnostics-color=always
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/v01d/dev/libs/include
+CXX_INCLUDES = -I/home/v01d/dev/libs/include -I/home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/src
 
 CXX_FLAGS = -DQT_QML_DEBUG -g -std=gnu++17 -fdiagnostics-color=always
 
