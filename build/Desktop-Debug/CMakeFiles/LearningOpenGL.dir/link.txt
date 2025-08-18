@@ -1,1 +1,1 @@
-/usr/bin/g++ -DQT_QML_DEBUG -g -Wl,--dependency-file=CMakeFiles/LearningOpenGL.dir/link.d CMakeFiles/LearningOpenGL.dir/main.cpp.o -o LearningOpenGL
+/usr/bin/g++ -DQT_QML_DEBUG -g -Wl,--dependency-file=CMakeFiles/LearningOpenGL.dir/link.d CMakeFiles/LearningOpenGL.dir/src/glad.c.o CMakeFiles/LearningOpenGL.dir/main.cpp.o -o LearningOpenGL  /home/v01d/dev/libs/lib/libglfw3.a -lX11 -lXrandr -lXi -lpthread -ldl -lm /usr/lib/libGLX.so /usr/lib/libOpenGL.so

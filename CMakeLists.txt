@@ -1,11 +1,34 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(LearningOpenGL LANGUAGES CXX)
+# As we're working with a C file, we need to add C in the files
+project(LearningOpenGL LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(LearningOpenGL main.cpp)
+# Add glad.c to your sources
+add_executable(LearningOpenGL
+    src/glad.c
+    main.cpp
+)
+
+find_package(OpenGL REQUIRED)
+
+# Make sure this path points to where your glad.h and iKHR directory are located
+target_include_directories(LearningOpenGL PRIVATE
+    /home/v01d/dev/libs/include
+)
+
+target_link_libraries(LearningOpenGL PRIVATE
+    /home/v01d/dev/libs/lib/libglfw3.a
+    OpenGL::GL
+    X11
+    Xrandr
+    Xi
+    pthread
+    dl
+    m
+)
 
 include(GNUInstallDirs)
 install(TARGETS LearningOpenGL
