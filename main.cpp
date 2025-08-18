@@ -1,5 +1,6 @@
 #include <iostream>
 #include <glfwService.h>
+#include <triangleData.h>
 
 using namespace std;
 
@@ -57,6 +58,77 @@ int main()
     // Now, we tell glfw to reset the viewpor whenever the window gets resized
     glfwSetFramebufferSizeCallback(window,framebuffer_size_callback);
 
+    // Create the VBO
+    unsigned int VBO;
+
+    // Here, we create a buffer and give It address to the VBO;
+    glGenBuffers(1,&VBO);
+
+
+    // Define the VAO
+    unsigned int VAO;
+    glGenVertexArrays(1,&VAO);
+
+    glBindVertexArray(VAO);
+
+    // Now , we bind our buffer to a specific type, in our case its GL_ARRAY_BUFFER;
+    glBindBuffer(GL_ARRAY_BUFFER,VBO);
+
+    // From now on, any buffer call we make on type GL_ARRAY_BUFFER will be used to configure to currently bound buffer VBO
+
+    // Now, we copy the vertices data into the buffer's memory
+    glBufferData(GL_ARRAY_BUFFER,sizeof(vertices),vertices,GL_STATIC_DRAW);
+
+    // We go on now on the first step of creating a vertex shader
+    unsigned int vertexShader;
+    vertexShader = glCreateShader(GL_VERTEX_SHADER);
+
+    // We attach the shader to our vsh source code
+    // The vsh code source is in a c string in triangleData.h
+    glShaderSource(vertexShader,1,&vertexShaderSource,NULL);
+
+    // Compile the shader
+    glCompileShader(vertexShader);
+
+    // We do the same now for the fragment shader
+    unsigned int fragmentShader;
+    fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+
+    glShaderSource(fragmentShader,1,&fragmentShaderSource,NULL);
+    glCompileShader(fragmentShader);
+
+    // Finally we create a shader program which is the final object linking multiple shaders combined
+    unsigned int shaderProgram;
+    shaderProgram = glCreateProgram();
+
+
+    // Now, we attach the made shaders to the program
+    glAttachShader(shaderProgram,vertexShader);
+    glAttachShader(shaderProgram,fragmentShader);
+
+    // Link all of the saders
+    glLinkProgram(shaderProgram);
+
+    // The goal now is to link the vertex attributes to the vertex shader's input
+    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,3 * sizeof(float),(void*)0);
+
+    // Now, we just enable the vertex attrib array
+    // 0 is the vertex attribute location
+    glEnableVertexAttribArray(0);
+
+
+
+    // The result is a program object that we can activate
+    // glUseProgram(shaderProgram);
+
+    // glBindVertexArray(VAO);
+    // glDrawArrays(GL_TRIANGLES,0,3);
+    // Then we proceed to delete the shaders as we no longer need them
+    glDeleteShader(vertexShader);
+    glDeleteShader(fragmentShader);
+
+    // let's analyze the different arguments
+
     // We don't want to show an image and stop
     // We create a while to keep rendering
 
@@ -71,9 +143,15 @@ int main()
         // glClearColor is a "state-changing" function
         glClearColor(.2f,.3f,.3f,1.0f);
 
+        // After setting our vertex data in triangleData.h, we need to pass It to the vertex shader
+
         // Then we set that we want to clear the color buffer
         // glClear is a "state-using" function
         glClear(GL_COLOR_BUFFER_BIT);
+        // draw the triangle
+        glUseProgram(shaderProgram);
+        glBindVertexArray(VAO);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
 
         // This func will swap the color buffer and show the colors in the screen
         glfwSwapBuffers(window);

@@ -11,6 +11,10 @@ add_executable(LearningOpenGL
     src/glad.c
     main.cpp
     src/glfwService.h
+    documentation/bookDocumentation.md
+    src/triangleData.h
+    shaders/triangleShader.vsh
+    shaders/triangleFragment.fsh
 )
 
 find_package(OpenGL REQUIRED)

@@ -4,6 +4,7 @@
 CMakeFiles/LearningOpenGL.dir/main.cpp.o
  /home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/main.cpp
  /home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/src/glfwService.h
+ /home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/src/triangleData.h
  /home/v01d/dev/libs/include/GLFW/glfw3.h
  /home/v01d/dev/libs/include/KHR/khrplatform.h
  /home/v01d/dev/libs/include/glad/glad.h

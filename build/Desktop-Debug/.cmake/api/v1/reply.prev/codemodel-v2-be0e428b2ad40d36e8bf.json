@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-4ff6a21d5de7e9a8820f.json",
+					"jsonFile" : "directory-.-Debug-8ed4e653d7d71e95f908.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -40,7 +40,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "LearningOpenGL::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-LearningOpenGL-Debug-7474f876ae6b3a197317.json",
+					"jsonFile" : "target-LearningOpenGL-Debug-6229183935bb19de16b3.json",
 					"name" : "LearningOpenGL",
 					"projectIndex" : 0
 				}

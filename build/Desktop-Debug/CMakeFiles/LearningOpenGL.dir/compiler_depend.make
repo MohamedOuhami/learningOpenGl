@@ -3,6 +3,7 @@
 
 CMakeFiles/LearningOpenGL.dir/main.cpp.o: /home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/main.cpp \
   /home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/src/glfwService.h \
+  /home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/src/triangleData.h \
   /home/v01d/dev/libs/include/GLFW/glfw3.h \
   /home/v01d/dev/libs/include/KHR/khrplatform.h \
   /home/v01d/dev/libs/include/glad/glad.h \
@@ -471,6 +472,10 @@ CMakeFiles/LearningOpenGL.dir/main.cpp.o:
 
 /usr/include/c++/15.1.1/bits/stl_pair.h:
 
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++locale.h:
+
+/usr/include/c++/15.1.1/bits/stl_iterator_base_types.h:
+
 /usr/include/bits/types/clockid_t.h:
 
 /usr/include/c++/15.1.1/bits/cxxabi_forced.h:
@@ -490,8 +495,6 @@ CMakeFiles/LearningOpenGL.dir/main.cpp.o:
 /usr/include/bits/types.h:
 
 /usr/include/bits/thread-shared-types.h:
-
-/usr/include/bits/types/struct_timeval.h:
 
 /usr/include/c++/15.1.1/system_error:
 
@@ -523,9 +526,7 @@ CMakeFiles/LearningOpenGL.dir/main.cpp.o:
 
 /usr/include/bits/pthreadtypes.h:
 
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/error_constants.h:
-
-/usr/include/asm/bitsperlong.h:
+/usr/include/bits/pthread_stack_min-dynamic.h:
 
 /usr/lib32/libXau.so.6:
 
@@ -534,10 +535,6 @@ CMakeFiles/LearningOpenGL.dir/main.cpp.o:
 /usr/include/asm-generic/errno-base.h:
 
 /usr/include/asm-generic/errno.h:
-
-/usr/include/bits/floatn.h:
-
-/usr/include/c++/15.1.1/bits/locale_classes.h:
 
 /usr/include/c++/15.1.1/type_traits:
 
@@ -569,7 +566,21 @@ CMakeFiles/LearningOpenGL.dir/main.cpp.o:
 
 /usr/include/bits/types/clock_t.h:
 
-/usr/include/bits/pthread_stack_min-dynamic.h:
+/usr/include/bits/types/struct_timeval.h:
+
+/home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/src/triangleData.h:
+
+/usr/include/bits/atomic_wide_counter.h:
+
+/usr/include/c++/15.1.1/bits/localefwd.h:
+
+/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/error_constants.h:
+
+/usr/include/asm/bitsperlong.h:
+
+/usr/include/c++/15.1.1/bits/locale_classes.h:
+
+/usr/include/bits/floatn.h:
 
 /usr/include/c++/15.1.1/new:
 
@@ -596,8 +607,6 @@ CMakeFiles/LearningOpenGL.dir/main.cpp.o:
 /usr/include/bits/stdio_lim.h:
 
 /usr/include/bits/time.h:
-
-/usr/include/bits/types/locale_t.h:
 
 /usr/include/c++/15.1.1/cstdlib:
 
@@ -635,10 +644,6 @@ CMakeFiles/LearningOpenGL.dir/main.cpp.o:
 
 /usr/include/c++/15.1.1/bits/locale_facets.h:
 
-/usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++locale.h:
-
-/usr/include/c++/15.1.1/bits/stl_iterator_base_types.h:
-
 /usr/include/c++/15.1.1/cwctype:
 
 /usr/include/bits/types/time_t.h:
@@ -652,6 +657,8 @@ CMakeFiles/LearningOpenGL.dir/main.cpp.o:
 /usr/include/c++/15.1.1/bits/basic_string.tcc:
 
 /usr/include/c++/15.1.1/bits/postypes.h:
+
+/usr/include/bits/types/locale_t.h:
 
 /usr/include/bits/types/mbstate_t.h:
 
@@ -786,10 +793,6 @@ CMakeFiles/LearningOpenGL.dir/src/glad.c.o:
 /usr/include/c++/15.1.1/bits/istream.tcc:
 
 /usr/include/c++/15.1.1/bits/locale_facets.tcc:
-
-/usr/include/bits/atomic_wide_counter.h:
-
-/usr/include/c++/15.1.1/bits/localefwd.h:
 
 /usr/include/c++/15.1.1/bits/basic_ios.tcc:
 

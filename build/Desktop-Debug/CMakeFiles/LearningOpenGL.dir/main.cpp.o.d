@@ -151,4 +151,5 @@ CMakeFiles/LearningOpenGL.dir/main.cpp.o: \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/stdint-uintn.h \
  /usr/include/bits/stdint-least.h \
- /home/v01d/dev/libs/include/GLFW/glfw3.h
+ /home/v01d/dev/libs/include/GLFW/glfw3.h \
+ /home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/src/triangleData.h
