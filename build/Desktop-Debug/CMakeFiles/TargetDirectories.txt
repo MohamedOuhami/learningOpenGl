@@ -1,0 +1,7 @@
+/home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/build/Desktop-Debug/CMakeFiles/LearningOpenGL.dir
+/home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/build/Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/build/Desktop-Debug/CMakeFiles/install.dir
+/home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/build/Desktop-Debug/CMakeFiles/install/local.dir
+/home/v01d/Documents/Programming/PersonalProjects/LearningOpenGL/build/Desktop-Debug/CMakeFiles/install/strip.dir
