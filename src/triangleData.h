@@ -7,10 +7,23 @@
 
 // A triangle has 3 point ,so we define 3 vertices
 // The first point is the one at the bottom left, the second is the bottom right and the last is the top
-float vertices[] =  {
+float triangle_vertices[] =  {
     -.5f,-.5f,0.0f,
     .5f,-.5f,0.0f,
     0.0f,.5f,0.0f
+};
+
+float rectangle_vertices[] = {
+    0.5f,0.5f,0.0f, // Top Right
+    -0.5f,0.5f,0.0f, // Top Left
+    0.5f,-0.5f,0.0f, // Bottom Right
+    -0.5f,-0.5f,0.0f // Bottom Left
+};
+
+// Setting the indices of the vertices to draw
+unsigned int indices[] = {
+    0,2,1, // First triangle
+    1,2,3 // Second triangle
 };
 
 const char* vertexShaderSource =

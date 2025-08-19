@@ -58,26 +58,56 @@ int main()
     // Now, we tell glfw to reset the viewpor whenever the window gets resized
     glfwSetFramebufferSizeCallback(window,framebuffer_size_callback);
 
+    // ===============================
+    // The first step is create a VBO
+    // ===============================
+
     // Create the VBO
     unsigned int VBO;
 
     // Here, we create a buffer and give It address to the VBO;
     glGenBuffers(1,&VBO);
 
+    // Now , we bind our buffer to a specific type, in our case its GL_ARRAY_BUFFER;
+    // From now on, any buffer call we make on type GL_ARRAY_BUFFER will be used to configure to currently bound buffer VBO
+    glBindBuffer(GL_ARRAY_BUFFER,VBO);
+
+    // Now, we copy the vertices data into the buffer's memory
+    glBufferData(GL_ARRAY_BUFFER,sizeof(rectangle_vertices),rectangle_vertices,GL_STATIC_DRAW);
+
+    // ====================================================================================
+    // Next, we would create the VAO to remember which VBO to link to which vertex attribute
+    // =====================================================================================
 
     // Define the VAO
     unsigned int VAO;
     glGenVertexArrays(1,&VAO);
 
+    // Bind the Buffer
     glBindVertexArray(VAO);
 
-    // Now , we bind our buffer to a specific type, in our case its GL_ARRAY_BUFFER;
-    glBindBuffer(GL_ARRAY_BUFFER,VBO);
+    // The goal now is to link the vertex attributes to the vertex shader's input
+    // The VAO is bounded with the latest bounded Vertex Buffer Object, which is VBO
+    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,3 * sizeof(float),(void*)0);
 
-    // From now on, any buffer call we make on type GL_ARRAY_BUFFER will be used to configure to currently bound buffer VBO
+    // Now, we just enable the vertex attrib array
+    // 0 is the vertex attribute location
+    glEnableVertexAttribArray(0);
 
-    // Now, we copy the vertices data into the buffer's memory
-    glBufferData(GL_ARRAY_BUFFER,sizeof(vertices),vertices,GL_STATIC_DRAW);
+    // Create the EBO
+    unsigned int EBO;
+    glGenBuffers(1,&EBO);
+
+    // We bind the buffer to GL_ELEMENT_ARRAY_BUFFER to the EBO and put indices in It
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,EBO);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER,sizeof(indices),indices,GL_STATIC_DRAW);
+
+
+
+
+    // ========================
+    // Create the Vertex Shader
+    // ========================
 
     // We go on now on the first step of creating a vertex shader
     unsigned int vertexShader;
@@ -89,6 +119,10 @@ int main()
 
     // Compile the shader
     glCompileShader(vertexShader);
+
+    // ===========================
+    // Create the Fragment Shader
+    // ===========================
 
     // We do the same now for the fragment shader
     unsigned int fragmentShader;
@@ -108,15 +142,6 @@ int main()
 
     // Link all of the saders
     glLinkProgram(shaderProgram);
-
-    // The goal now is to link the vertex attributes to the vertex shader's input
-    glVertexAttribPointer(0,3,GL_FLOAT,GL_FALSE,3 * sizeof(float),(void*)0);
-
-    // Now, we just enable the vertex attrib array
-    // 0 is the vertex attribute location
-    glEnableVertexAttribArray(0);
-
-
 
     // The result is a program object that we can activate
     // glUseProgram(shaderProgram);
@@ -151,7 +176,7 @@ int main()
         // draw the triangle
         glUseProgram(shaderProgram);
         glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT,0);
 
         // This func will swap the color buffer and show the colors in the screen
         glfwSwapBuffers(window);

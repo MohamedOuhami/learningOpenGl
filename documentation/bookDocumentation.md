@@ -114,3 +114,11 @@ division. We’ll discuss vectors in much greater depth in a later chapter.
 - After creating the Vertex Shader, we need to tell the GPU from which location or slot to take the attributes from
 - So, the step goes by creating the VBO, link It to a buffer
 - Create the VAO, and call glVertexAttribPointer, which makes the VAO remember which VBO to match which vertex attributes
+
+#### Element Buffer Objects
+- Let's talk abot **Element Buffer Objects** or **EBO**
+- Taking the example of wanting to draw a rectangle, we can do that with 2 rectangles, but the thing is that some of the vertices might overlap
+- Imagine for a really complex model where we have 1000s of triangles that overlap
+- We want to store only the unique vertices, that's where EBO comes for
+- EBO is a buffer like VBO that stores the indices that OpenGL uses to decide which vertices to draw.
+- This process is called **indexed drawing**

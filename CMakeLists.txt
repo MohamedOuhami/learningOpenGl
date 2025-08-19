@@ -15,6 +15,7 @@ add_executable(LearningOpenGL
     src/triangleData.h
     shaders/triangleShader.vsh
     shaders/triangleFragment.fsh
+    src/triangleData.h
 )
 
 find_package(OpenGL REQUIRED)
