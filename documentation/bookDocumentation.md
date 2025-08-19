@@ -110,3 +110,7 @@ division. We’ll discuss vectors in much greater depth in a later chapter.
 - The previous process seems like a cumbersome process, luckily we have **VAO or Vertex Array Object**
 - A VAO can be bound like a normal VBO and any subsequent vertex attributes calls from that point will be stored in the VAO
 - This has the advantage that when configuring vertex attribute pointer, we only have to make that call once and whenever we want to draw something, we just bind the corresponding VAOi
+- Basically what happens , the VBO gets the vertices data from the CPU to the GPU to make the rendering faster
+- After creating the Vertex Shader, we need to tell the GPU from which location or slot to take the attributes from
+- So, the step goes by creating the VBO, link It to a buffer
+- Create the VAO, and call glVertexAttribPointer, which makes the VAO remember which VBO to match which vertex attributes
