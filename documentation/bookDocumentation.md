@@ -122,3 +122,17 @@ division. We’ll discuss vectors in much greater depth in a later chapter.
 - We want to store only the unique vertices, that's where EBO comes for
 - EBO is a buffer like VBO that stores the indices that OpenGL uses to decide which vertices to draw.
 - This process is called **indexed drawing**
+
+### VBO, VAO and EBO summary
+- Basically, we have an object that we want to store, let's say a triangle
+- This triangle is composed of what is called **vertices**.
+- Each vertice present a set of data all in one line, it can be position, beside it color, normal vector etc ....
+- Now, we need to get this data to the GPU and that is done by using a VBO or Vertex Buffer Object
+- It just takes all the vertices of the object and puts It in the GPU ready for render
+- Now, when in the GPU, we need to tell the GPU where each point start and finish, and for each point, where does the positions start, where does the color strat
+- These position, and color etc ... are called **attributes**
+- We could do this by hand, but that would be cumbersome, for that we use a VAO or **Vertex Array Object**
+- A vertex array is created first, and then bound, and in it we define **slots**
+- If you check in the vertex shader, you're gonna find that we defined locations for each attribute
+- and similar in the VAO, we do **glEnableVertexAttribArray(location)**, where to tell the VAO we want to store in slot 0 or 1 or 2, the following
+- Then we configure the attribute using **glVertexAttribPointer(location,number of values in attrib, type,normalize?,the stride,start_positionn**
