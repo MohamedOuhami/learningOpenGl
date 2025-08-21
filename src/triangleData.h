@@ -8,9 +8,11 @@
 // A triangle has 3 point ,so we define 3 vertices
 // The first point is the one at the bottom left, the second is the bottom right and the last is the top
 float triangle_vertices[] =  {
-    -.5f,-.5f,0.0f,
-    .5f,-.5f,0.0f,
-    0.0f,.5f,0.0f
+    -1.0f,-.5f,0.0f, // Left Botton
+    0.0f,-.5f,0.0f, // Right Bottom
+    0.0f,.5f,0.0f, // Top Middle
+    1.0f,-.5f,0.0f
+
 };
 
 float rectangle_vertices[] = {

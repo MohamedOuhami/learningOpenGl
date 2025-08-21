@@ -58,10 +58,21 @@ int main()
     // Now, we tell glfw to reset the viewpor whenever the window gets resized
     glfwSetFramebufferSizeCallback(window,framebuffer_size_callback);
 
-    // ===============================
+
+ // ====================================================================================
+    // Next, we would create the VAO to remember which VBO to link to which vertex attribute
+    // =====================================================================================
+
+    // Define the VAO
+    unsigned int VAO;
+    glGenVertexArrays(1,&VAO);
+
+    // Bind the Buffer
+    glBindVertexArray(VAO);
+
+   // ===============================
     // The first step is create a VBO
     // ===============================
-
     // Create the VBO
     unsigned int VBO;
 
@@ -73,18 +84,7 @@ int main()
     glBindBuffer(GL_ARRAY_BUFFER,VBO);
 
     // Now, we copy the vertices data into the buffer's memory
-    glBufferData(GL_ARRAY_BUFFER,sizeof(rectangle_vertices),rectangle_vertices,GL_STATIC_DRAW);
-
-    // ====================================================================================
-    // Next, we would create the VAO to remember which VBO to link to which vertex attribute
-    // =====================================================================================
-
-    // Define the VAO
-    unsigned int VAO;
-    glGenVertexArrays(1,&VAO);
-
-    // Bind the Buffer
-    glBindVertexArray(VAO);
+    glBufferData(GL_ARRAY_BUFFER,sizeof(triangle_vertices),triangle_vertices,GL_STATIC_DRAW);
 
     // The goal now is to link the vertex attributes to the vertex shader's input
     // The VAO is bounded with the latest bounded Vertex Buffer Object, which is VBO
@@ -94,6 +94,9 @@ int main()
     // 0 is the vertex attribute location
     glEnableVertexAttribArray(0);
 
+    // Now, we can unbind the VBO cuz we no longer need It
+    glBindBuffer(GL_ARRAY_BUFFER,0);
+
     // Create the EBO
     unsigned int EBO;
     glGenBuffers(1,&EBO);
@@ -101,9 +104,6 @@ int main()
     // We bind the buffer to GL_ELEMENT_ARRAY_BUFFER to the EBO and put indices in It
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER,sizeof(indices),indices,GL_STATIC_DRAW);
-
-
-
 
     // ========================
     // Create the Vertex Shader
